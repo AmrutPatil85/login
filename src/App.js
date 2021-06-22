@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Login1 from "./Login1";
 
+
+import axios from 'axios';
+
+import {Navbar,Nav,NavDropdown} from 'react-bootstrap'
+import { BrowserRouter as Router, Switch, Route, Link, useHistory,withRouter } from 'react-router-dom';
+import Dashboard from "./Dashboard";
 function App() {
+ 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      
+       
+        <br /> 
+        <Switch>
+          <Route exact path='/' component={Login1} />
+          
+          <Route path='/Dashboard' component={Dashboard} />
+        </Switch>
+    
+    </Router>
   );
+
+ 
 }
 
 export default App;
